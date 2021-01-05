@@ -1,0 +1,4 @@
+/* pages/demo07/demo07.wxss */
+text {
+  color: yellow;
+}

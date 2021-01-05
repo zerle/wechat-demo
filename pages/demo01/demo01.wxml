@@ -1,0 +1,72 @@
+<!--pages/demo01/demo01.wxml-->
+<text>pages/demo01/demo01.wxml</text>
+<!-- text 相当于以前web中的 span 标签 行内元素  不会换行 -->
+<!-- view 相当于以前web中的 div 标签 块级元素 会换行 -->
+
+<!-- 1 字符串 -->
+<view>{{msg}}</view>
+<!-- 2 数字类型 -->
+<view>{{num}}</view>
+<!-- 3 bool类型 -->
+<view>{{isGirl}}</view>
+<!-- 4 object 类型 -->
+<view>{{person.age}}</view>
+<!-- 5 在标签的属性中使用 -->
+<view data-num="{{num}}"></view>
+<!-- 6 使用bool类型充当属性 checked -->
+  <!-- 1 字符串和花括号之间一定不要存在空格， 否则会导致识别失败 -->
+    <!-- 错误示范  -->
+      <!-- <checkbox checked=" {{isChecked}"></checkbox> -->
+<view>
+  <checkbox checked="{{isChecked}}"></checkbox>
+</view>
+<!-- 7 运算 => 表达式 -->
+<view>{{1+1}}</view>
+<!-- 8 列表循环 -->
+ <!-- 1 wx:for="{{数组或者对象}}" wx:for-item="循环项的名称" wx:for-index="循环项的索引" -->
+ <!-- 2 wx:key="唯一的值" 用来提高列表渲染的性能 -->
+  <!-- 1 wx:key 绑定一个普通的字符串的时候 那么这个字符串名称 肯定是 循环数组中的对象的唯一属性 -->
+  <!-- 2 wx:key="*this" 就表示 你的数组 是一个普通的数组 *this 表示是 循环项 -->
+    <!-- 3 wx:for-item wx:for-index不写的话，默认为item 和index -->
+  <!-- 只有一层循环的话，wx:for-item="item" wx:for-index="index" 可以省略 -->
+<view>
+  <view wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="id">
+    索引： {{index}} --- {{item.name}}
+  </view>
+</view>
+<!-- 9 对象循环 -->
+  <!-- 1 wx:for="{{对象}}" wx:for-item="对象的值" wx:for-index="对象的属性" -->
+  <!-- 2 wx:for-item="value" wx:for-index="key" -->
+  <view wx:for="{{person}}" wx:for-item="value" wx:for-index="key" wx:key="age">
+    <view>
+      对象的属性 --- {{key}}
+      对象的值 --- {{value}}
+    </view>
+  </view>
+  <!-- 10 block -->
+    <!-- 1 占位符的标签 -->
+    <!-- 2 写代码的时候 可以看到这标签存在 -->
+    <!-- 3 页面渲染 小程序会把它移除掉 -->
+  <view>
+    <block wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="id">
+      索引： {{index}} --- {{item.name}}
+    </block>
+  </view>
+  <!-- 11 条件渲染 -->
+    <!-- 1 wx:if="{{true/false}}" -->
+    <!-- 2 if, else, if else -->
+    <!-- 3 hidden 在标签上直接加入属性 hidden -->
+  <view>
+    <view>条件渲染</view>
+    <view wx:if="{{true}}">显示</view>
+    <view wx:if="{{false}}">隐藏</view>
+
+    <view wx:if="{{false}}">1</view>
+    <view wx:elif="{{false}}">2</view>
+    <view wx:else="{{true}}">3</view>
+    <view>==================</view>
+    <view hidden>hidden1</view>
+  </view>
+
+
+  

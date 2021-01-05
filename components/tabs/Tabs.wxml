@@ -1,0 +1,17 @@
+<view class="tabs">
+  <view class="tabs_title">
+    <view wx:for="{{tabs}}" 
+          wx:key="id" 
+          class="title_item {{item.isActive ? 'active' : ''}}" 
+          bindtap="handleItemTabs"
+          data-index="{{index}}">
+      {{item.name}}
+    </view>
+  </view>
+  <view class="tabs_content">
+    <!-- 
+      slot 标签 其实就是一个占位符 插槽
+     -->
+     <slot></slot>
+  </view>
+</view>

@@ -1,0 +1,43 @@
+
+<!-- 
+  button 标签
+    1 外观的属性
+      1 size 控制按钮的大小
+        1 default 默认大小
+        2 mini 小尺寸
+      2 type 用来控制按钮的颜色
+        1 default 灰色
+        2 primary 绿色
+        3 warn 红色
+      3 plain 按钮是否镂空  背景色透明
+ -->
+ <button>默认按钮</button>
+ <button size="mini">mini 按钮</button>
+ <button size="mini" type="primary">mini 按钮</button>
+ <button type="warn">warn按钮</button>
+ <button size="mini" type="warn" plain>plain 按钮</button>
+ <button size="mini" type="warn" loading>mini 按钮</button>
+==========================================================
+<!-- 
+  button 开发能力
+    open-type
+      1 contact 直接打开 客服对话功能 需要在微信小程序的后台配置
+      2 share 转发当前的小程序 到微信朋友中， 不能转发到朋友圈
+      3 getPhoneNumber 获取用户手机号，可以从bindgetphonenumber回调中获取到用户信息
+      4 getUserInfo 获取当前用户的个人信息
+      5 lanuchApp 在小程序当中 直接打开app
+        1 需要先在 app中 通过app的某个链接 打开小程序
+        2 在小程序中 再通过 这个功能 重新打开 app
+        3 找到 京东的app 和京东的小程序
+      6 openSetting 打开 小程序内置的 授权页面
+        1 授权页面中 只会出现 用户曾经点击过的权限
+      7 feedback 打开 小程序内置的 意见反馈页面
+ -->
+
+ <button open-type="contact">contact</button>
+ <button open-type="share">share</button>
+ <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">getPhoneNumber</button>
+ <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">getUserInfo</button>
+ <button open-type="launchApp">launchApp</button>
+ <button open-type="openSetting">openSetting</button>
+ <button open-type="feedback">feedback</button>

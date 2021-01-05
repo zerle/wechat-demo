@@ -1,0 +1,40 @@
+<!-- 
+  1 轮播图外层容器 swiper
+  2 每一个轮播项 swiper-item
+  3 swiper 默认值
+    width 100%
+    height 150px
+    image  320*240
+    swiper 高度 无法实现由内容撑开
+  4 先找出来 原图的宽高  等比例 给 swiper 定 宽度和高度
+      1 假定：原图宽度和高度为 520 * 300px
+      2 swiper 宽度 / swiper 高度 = 原图的宽度 / 原图的高度
+      3 则 swiper 高度 = (swiper 宽度 * 原图的高度) / 原图的宽度
+      4    height= 100vw * 200 / 640
+          -------------------------
+          swiper{ 
+          　　width: 100%;
+        　　 height: calc(100vw * 200 / 640);
+        　	}
+        　 image{
+          　　width: 100%;
+        　 }
+  5 autoplay 自动轮播
+  6 interval 修改轮播时间
+  7 circular 循环轮播
+  8 indicator-dots 显示指示器 分页器 索引器
+  9 indicator-color 指示器未选择的颜色
+  10 indicator-active-color 选中的时候的指示器的颜色
+ -->
+
+ <swiper autoplay interval="2000" circular indicator-dots indicator-color="#0094ff" indicator-active-color="#ff0094">
+   <swiper-item>
+     <image mode="widthFix" src="https://aecpm.alicdn.com/simba/img/TB14ab1KpXXXXclXFXXSutbFXXX.jpg_q50.jpg"/>
+   </swiper-item>
+   <swiper-item>
+     <image mode="widthFix" src="//gw.alicdn.com/imgextra/i1/96/O1CN01c2a9XO1Ca0fYIxlpp_!!96-0-lubanu.jpg"/>
+   </swiper-item>
+   <swiper-item>
+     <image mode="widthFix" src="https://aecpm.alicdn.com/simba/img/TB1CWf9KpXXXXbuXpXXSutbFXXX.jpg_q50.jpg"/>
+   </swiper-item>
+ </swiper>
